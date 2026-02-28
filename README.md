@@ -1,6 +1,9 @@
 # CarCounter
 
 An ASP.NET Core MVC application for counting cars by colour.
+
+Car Counting game is my go-to Hello World for coding. So why not try it through an agent. 
+
 This was purely created through agent promts. I've not looked or touched the code. 
 ## Prerequisites
 
