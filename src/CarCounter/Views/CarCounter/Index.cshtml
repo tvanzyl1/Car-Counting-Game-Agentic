@@ -1,0 +1,40 @@
+@model CarCounter.Models.CarCounterViewModel
+@{
+    ViewData["Title"] = "Car Counter";
+}
+
+<h1>🏁 Car Counter Race</h1>
+<p>Spot cars and tap the matching colour. First to <strong>@CarCounter.Models.CarCounterViewModel.WinningScore</strong> wins!</p>
+
+@if (Model.GameOver)
+{
+    <div class="alert alert-success text-center">
+        <h2>🎉 @Model.Winner wins the race!</h2>
+        <p>The <strong>@Model.Winner</strong> car reached @CarCounter.Models.CarCounterViewModel.WinningScore first. Well spotted!</p>
+    </div>
+}
+
+<div class="row mb-4">
+    @foreach (var car in Model.Cars)
+    {
+        <div class="col-md-4 text-center">
+            <form asp-action="Increment" method="post">
+                <input type="hidden" name="colour" value="@car.ColourName" />
+                <button type="submit" class="btn @car.CssClass btn-lg w-100 mb-2" @(Model.GameOver ? "disabled" : "")>
+                    @car.Emoji @car.ColourName <span class="badge bg-light text-dark">@car.Count</span>
+                </button>
+            </form>
+        </div>
+    }
+</div>
+
+<div class="alert alert-info text-center">
+    <h4>Total Cars Counted: <strong>@Model.TotalCount</strong></h4>
+</div>
+
+<div class="d-flex justify-content-center gap-3">
+    <form asp-action="Reset" method="post">
+        <button type="submit" class="btn btn-warning btn-lg">🔄 Restart Game</button>
+    </form>
+    <a asp-controller="Settings" asp-action="Index" class="btn btn-outline-secondary btn-lg">⚙️ Settings</a>
+</div>

@@ -1,0 +1,28 @@
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+out/
+
+# Node / TypeScript
+node_modules/
+dist/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db

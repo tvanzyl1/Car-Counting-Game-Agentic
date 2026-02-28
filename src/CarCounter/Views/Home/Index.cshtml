@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">🏁 Car Counter Race</h1>
+    <p class="lead">Pick three car colours from five options and start counting!</p>
+    <p>Every time you spot a car of that colour, tap its button. The first colour to reach <strong>10</strong> wins the race.</p>
+    <p>Head to <a asp-controller="Settings" asp-action="Index">Settings</a> to pick your colours, or jump straight in with the defaults.</p>
+    <hr />
+    <a class="btn btn-lg btn-primary" asp-controller="CarCounter" asp-action="Index">Start Playing &raquo;</a>
+</div>
